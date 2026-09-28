@@ -95,7 +95,8 @@ You can build Runevale using modern web and game development stacks. Below are t
 | **Game Engine** | **[Phaser 3](https://phaser.io/)** | Battle-tested 2D/isometric canvas/WebGL engine. Excellent sprite animation, tilemap support, and lightweight asset loading. |
 | **Language** | **[TypeScript](https://www.typescriptlang.org/)** | Shared types and interfaces across client and server for stats, monsters, items, and combat math. |
 | **Client Bundler** | **[Vite](https://vitejs.dev/)** | Instant Hot Module Replacement (HMR), ultra-fast builds, and zero-config TypeScript compilation. |
-| **UI Overlay** | **[React 18/19](https://react.dev/)** | Declarative DOM overlays on top of the Phaser canvas for menus, stat allocation windows, inventory grids, and offline summaries. |
+| **UI Overlay** | **[React 18/19](https://react.dev/)** + **[Pixelact UI](https://www.pixelactui.com/)** | Declarative DOM overlays with authentic pixel-art components and slide-out Drawers for menus, inventory grids, and offline summaries. |
+| **Styling** | **[Tailwind CSS](https://tailwindcss.com/)** | Powers Pixelact UI's stepped pixel-art shadows, borders, and responsive HUD positioning. |
 | **State Management**| **[Zustand](https://github.com/pmndrs/zustand)** | Minimalist, fast state store to bridge React UI components with Phaser game events seamlessly. |
 | **Backend API** | **[Node.js](https://nodejs.org/) + [Express](https://expressjs.com/)** *(or [Fastify](https://fastify.dev/))* | High-performance JSON REST API for user auth, cloud saves, and server-side offline calculations. |
 | **Database & ORM** | **[PostgreSQL](https://www.postgresql.org/) + [Prisma](https://www.prisma.io/)** *(or [Drizzle ORM](https://orm.drizzle.team/))* | Relational schema integrity for inventories, character stats, and equipment slots with typed queries. |
@@ -140,6 +141,15 @@ Runevale is built strictly with a **100% pixel art visual pipeline** to capture 
   - **Tilemap Design**: [Tiled](https://www.mapeditor.org/) or [LDtk](https://ldtk.io/) (configured for 2:1 isometric projection).
   - **Icon Resources**: [Pixelarticons](https://pixelarticons.com/) and [Game-Icons.net](https://game-icons.net/).
   - **Scene & Asset Packing**: [Phaser Editor 2D](https://phasereditor2d.com/).
+
+#### 🕹️ Pixel Art React UI: [Pixelact UI](https://www.pixelactui.com/)
+To maintain the retro aesthetic without cluttering the Phaser game screen, menus and modal sheets use [Pixelact UI](https://www.pixelactui.com/) (shadcn/ui + Tailwind CSS with stepped retro pixel borders):
+
+- **[Pixelact UI Drawer](https://www.pixelactui.com/docs/drawer)**: Slides out smoothly from the screen edges (bottom/side) for major game systems:
+  - **🗺️ Map & Hunting Ground Selector**: Slide-out drawer to select grinding maps, preview monster levels, element weaknesses, and rare card drop tables without interrupting combat.
+  - **🎒 Inventory & Equipment Sheet**: Bottom/side drawer displaying 32×32 pixel gear slots, weapons, headgears, accessories, and Zeny balance.
+  - **⏳ Offline Progress Summary**: Slide-up bottom drawer on login displaying offline grinding time, monsters defeated, EXP gained, and collected loot.
+  - **⚙️ Settings & Audio Drawer**: Clean panel for BGM/SFX sliders and auto-potion thresholds.
 
 ---
 
