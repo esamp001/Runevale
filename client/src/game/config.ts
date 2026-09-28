@@ -8,6 +8,7 @@ export function createGameConfig(parent: HTMLElement): Phaser.Types.Core.GameCon
     width: '100%',
     height: '100%',
     transparent: true,
+    pixelArt: true,
     physics: {
       default: 'arcade',
       arcade: {

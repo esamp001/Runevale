@@ -6,6 +6,7 @@
 [![Phaser](https://img.shields.io/badge/Phaser-3.x-red?logo=phaser)](https://phaser.io/)
 [![React](https://img.shields.io/badge/React-18.x-61dafb?logo=react)](https://react.dev/)
 [![Node.js](https://img.shields.io/badge/Node.js-20.x-green?logo=node.js)](https://nodejs.org/)
+[![Art Style](https://img.shields.io/badge/Visuals-100%25_Pixel_Art-blueviolet)](#-pure-pixel-art-direction)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql)](https://www.postgresql.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -14,6 +15,8 @@
 ## 📖 Overview
 
 **Runevale** is an isometric idle/AFK RPG crafted for players who cherish classic Ragnarok Online character progression, stat point theorycrafting, and monster grinding, but may not have endless hours to grind actively.
+
+The entire game features a **100% pure pixel art aesthetic**—from the 2.5D isometric terrain and animated characters to monster spritesheets, equipment icons, and retro UI details.
 
 Dispatch your adventurer to hunting zones across the realm. Watch them battle in real-time or close the game and let offline progression compute your experience, zeny, and rare drops. Return to allocate status points, upgrade your equipment, refine your build, and unlock challenging new maps.
 
@@ -24,8 +27,8 @@ Dispatch your adventurer to hunting zones across the realm. Watch them battle in
 - **Satisfying Progression in Short Bursts**: Meaningful character growth whether you have 5 minutes or 5 hours.
 - **Deep Ragnarok-Style Builds**: Genuine stat builds (STR, AGI, VIT, INT, DEX, LUK) that alter combat outcomes, cast times, ASPD, flee, and hit rates.
 - **True Offline Progress**: Mathematical offline simulation engine calculating realistic kills, loot drops, exp, and consumable usage.
+- **100% Pixel Art Visuals**: Every visual asset—isometric map tiles, characters, monsters, spells, items, and UI icons—is created in authentic pixel art, delivering classic 90s/2000s MMORPG nostalgia.
 - **Solo-Dev Friendly MVP**: Scoped for sustainable iterative solo development without sacrificing quality.
-- **Nostalgic Isometric Visuals**: Classic 2.5D isometric perspective with expressive 2D sprite animations and charming environments.
 
 ---
 
@@ -119,11 +122,24 @@ Depending on your design preferences, you can substitute components:
 
 ---
 
-### 🎨 Asset & Design Toolchain
+### 🎨 Pure Pixel Art Direction & Toolchain
 
-- **Tilemaps**: [Tiled](https://www.mapeditor.org/) or [LDtk](https://ldtk.io/) with isometric staggered/diamond projection.
-- **Sprite Art & Animations**: [Aseprite](https://www.aseprite.org/) or [Pixelorama](https://orama-interactive.itch.io/pixelorama) for 8-direction or 4-direction character walk/attack cycles.
-- **Visual Scene Design**: [Phaser Editor 2D](https://phasereditor2d.com/) for scene layout and asset pack management.
+Runevale is built strictly with a **100% pixel art visual pipeline** to capture the golden-era charm of classic 2D isometric MMORPGs:
+
+| Asset Type | Grid / Resolution Standard | Purpose & Details |
+| :--- | :--- | :--- |
+| **Isometric Terrain** | **64×32** diamond tiles (2:1 ratio) | Authentic isometric ground, elevation steps, water, and map obstacles. |
+| **Characters & Monsters** | **32×32** to **48×48** sprite sheets | 4-directional or 8-directional idle, walk, attack, and hit-reaction frames. |
+| **Equipment & Loot Icons** | **24×24** or **32×32** pixel icons | Weapons, armors, cards, headgears, and craftable loot in inventory grids. |
+| **UI & Status Icons** | **Pixelarticons** / Retro vector glyphs | Pixel-perfect UI glyphs and stat badges matching the retro aesthetic. |
+
+#### Pixel-Perfect Engine Settings
+- **Nearest-Neighbor Scaling**: Texture smoothing and bilinear filtering are disabled (`pixelArt: true` in Phaser configuration) to guarantee razor-sharp pixel edges at all zoom levels.
+- **Dedicated Tools**:
+  - **Sprite Art & Animations**: [Aseprite](https://www.aseprite.org/) or [Pixelorama](https://orama-interactive.itch.io/pixelorama).
+  - **Tilemap Design**: [Tiled](https://www.mapeditor.org/) or [LDtk](https://ldtk.io/) (configured for 2:1 isometric projection).
+  - **Icon Resources**: [Pixelarticons](https://pixelarticons.com/) and [Game-Icons.net](https://game-icons.net/).
+  - **Scene & Asset Packing**: [Phaser Editor 2D](https://phasereditor2d.com/).
 
 ---
 
